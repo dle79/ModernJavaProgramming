@@ -1,26 +1,24 @@
 package lesson2.prob2c;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Main {
-
-	public static void main(String[] args) {
-
-		Student student1 = new Student("Bob");
-		Section section1 = new Section(1,"Helen");
-		Section section2 = new Section(2,student1);
+	public static void main(String[] args) throws Exception {
+		Student stu1 = new Student("Mike", new ArrayList<Section>());
 		
-		section1.addStudent(student1);
+		//Section s0 = new Section(29, null); throw at lease one student exception
+		Section s1 = new Section(29, stu1);
+		Section s2 = new Section(30, stu1);
+
+		stu1.getSections().add(s1);
+		stu1.getSections().add(s2);
 		
-		for(Student s : section1.getStudents()){
-			System.out.println("Student " + s.name);			
-			for(Section sec : s.getSections()){
-				System.out.println("Section " + sec.sectionNum);
-				System.out.println(sec.getStudents());
-			}
-			System.out.println("================");
-		}				
+		System.out.println(stu1 + " has sections " + stu1.sections);
+		
+		Student stu2 = new Student("Jerry", new ArrayList<Section>());
+		s1.getStudents().add(stu2);		
+		System.out.println("Section "+s1+ " is added a new student " + stu2.getName());
+		
+		System.out.println("" + s1 + " has students " + s1.students);
 	}
-
 }

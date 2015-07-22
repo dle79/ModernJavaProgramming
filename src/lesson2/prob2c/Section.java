@@ -1,48 +1,42 @@
 package lesson2.prob2c;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Section
- */
 public class Section {
+	public int sectionNum;
+	public List<Student> students;
 
-	/**
-	 * Constructors
-	 */
-	public Section(int sectionNum, String studentName) {
+	
+	public Section(int sectionNum, Student student) throws Exception {
+		super();
 		this.sectionNum = sectionNum;
-		this.students = new HashSet<Student>();
-		Student student = new Student(studentName);
-		this.students.add(student);
-		student.addSection(this);
-	}
-
-	public Section(int sectionNum, Student student) {
-		this.sectionNum = sectionNum;
-		this.students = new HashSet<Student>();
-		this.students.add(student);
-		if (!student.getSections().contains(this)) {
-			student.addSection(this);
+		students = new ArrayList<Student>();
+		if(student != null){
+			students.add(student);
+			System.out.println("Section "+ sectionNum + " is created with a default student " + student);
+		}else{
+			throw new Exception("Section must have at least one student");
 		}
 	}
 
-	public void addStudent(Student student) {
-		this.students.add(student);
-		student.addSection(this);
+	public int getSectionNum() {
+		return sectionNum;
 	}
-	
-	public Set<Student> getStudents(){
+
+	public void setSectionNum(int sectionNum) {
+		this.sectionNum = sectionNum;
+	}
+
+	public List<Student> getStudents() {
 		return students;
 	}
 
-	/**
-	 * Attributes
-	 */
-	public int sectionNum;
-	private Set<Student> students;
-
+	@Override
 	public String toString() {
-		return String.valueOf(this.sectionNum);
+		return "Section [sectionNum=" + sectionNum + "]";
 	}
+
+	
+	
 }

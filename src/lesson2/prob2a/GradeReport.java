@@ -1,24 +1,28 @@
 package lesson2.prob2a;
-import java.util.*;
 
-/**
- * GradeReport 
- */
 public class GradeReport {
+	private String reportNum;
+	private Student student;
 
-    /**
-     * Constructor 
-     */
-    public GradeReport(Student student, String grade) {
-    	this.student = student;
-    	this.grade = grade;
-    }
-    
-    public GradeReport(String name, String grade) {    	
-    	this.grade = grade;
-    	this.student = new Student(name, this);
-    }
-         
-    private Student student;
-    private String grade;
+	public GradeReport(String report) {
+		super();
+		this.reportNum = report;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+
+	public Student getStudent() {
+		return student;
+	}
+
+	@Override
+	public String toString() {
+		return "GradeReport [reportNum=" + reportNum + "]";
+	}
+	
+	
+
 }

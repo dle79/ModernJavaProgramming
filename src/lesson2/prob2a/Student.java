@@ -1,31 +1,36 @@
 package lesson2.prob2a;
-import java.util.*;
 
-/**
- * Student
- */
 public class Student {
+	private String name;
 
-    /**
-     *Contructor
-     */
+
+
+	private GradeReport gradeReport;
 	
-    public Student(String name, String grade) {
-    	this.name = name;
-    	this.grade = new GradeReport(this, grade);
-    }
-    
-    
-    public Student(String name, GradeReport grade) {
-    	this.name = name;    
-    	this.grade = grade;
-    }
+	public Student(String name, GradeReport gradeReport) {
+		this.name = name;
+		this.gradeReport = gradeReport;
+	}
 
-     
-    /**
-     * Attributes
-     */
-    private String name;
-    private GradeReport grade;
+	
+	public GradeReport getGradeReport() {
+		return gradeReport;
+	}
 
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [name=" + name +"]";
+	}
+	
+	
 }

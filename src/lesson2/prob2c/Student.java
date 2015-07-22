@@ -1,39 +1,37 @@
 package lesson2.prob2c;
 
-import java.util.*;
+import java.util.List;
 
-/**
- * Student
- */
 public class Student {
+	public String name;
+	public List<Section> sections;
 
-	/**
-	 * Constructor
-	 */
-	public Student(String name) {
+	public Student(String name, List<Section> sections) {
+		super();
 		this.name = name;
-		sections = new HashSet<Section>();
+		this.sections = sections;
 	}
 
-	public void addSection(Section section) {
-		sections.add(section);
-		if (!section.getStudents().contains(this)) {
-			section.addStudent(this); 
-		}
+	public String getName() {
+		return name;
 	}
-	
-	public Set<Section> getSections(){
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Section> getSections() {
 		return sections;
 	}
 
-	/**
-	 * attributes
-	 */
-	public String name;
-	private Set<Section> sections;
-
-	public String toString() {
-		return this.name;
+	public void setSections(List<Section> sections) {
+		this.sections = sections;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [name=" + name + "]";
+	}
+	
+	
 }
