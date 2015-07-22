@@ -10,7 +10,9 @@ public class Feature {
     /**
      * 
      */
-    public Feature() {
+    public Feature(int hourRequired, int percentageRemaining) {
+    	this.hourRequired = hourRequired;
+    	this.percentageRemaining = percentageRemaining;
     }
 
     /**

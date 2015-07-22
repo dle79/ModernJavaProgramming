@@ -10,7 +10,10 @@ public class Sprint {
     /**
      * 
      */
-    public Sprint() {
+    public Sprint(List<Feature> sprintFeatures, Date dueDate , Developer developer) {
+    	this.sprintFeatures = sprintFeatures;
+    	this.dueDate = dueDate;
+    	this.developer = developer;
     }
 
     /**
@@ -23,6 +26,10 @@ public class Sprint {
      */
     private Date dueDate;
 
+    /**
+     * 
+     */
+    private Developer developer;
 
 
 }
