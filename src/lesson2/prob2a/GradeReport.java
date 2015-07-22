@@ -14,26 +14,11 @@ public class GradeReport {
     	this.grade = grade;
     }
     
-    public GradeReport(String grade) {    	
+    public GradeReport(String name, String grade) {    	
     	this.grade = grade;
+    	this.student = new Student(name, this);
     }
-    
-    public Student getStudent(){
-    	return student;
-    }
-    
-    public void setStudent(Student student){
-    	this.student = student;
-    }
-    
-    public String getGrade(){
-    	return grade;
-    }
-    
-    public void setGrade(String grade){
-    	this.grade = grade;
-    }
-    
+         
     private Student student;
     private String grade;
 }
