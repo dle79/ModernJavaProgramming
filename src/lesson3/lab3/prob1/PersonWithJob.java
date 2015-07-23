@@ -3,7 +3,7 @@ package lesson3.lab3.prob1;
 public class PersonWithJob {
 	
 	private double salary;
-	Person person;
+	private Person person;
 	
 	public double getSalary() {
 		return salary;
