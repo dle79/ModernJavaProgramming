@@ -5,6 +5,7 @@ public class Cylinder {
 	private Circle circle;
 	
 	public Cylinder() {
+		circle = new Circle();
 	}
 
 	public Cylinder(double radius) {
