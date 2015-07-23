@@ -1,0 +1,10 @@
+ In the main method, two instances of Person have been compared to determine if they are equal. The comparison is done in two different ways. 
+ The reason is:
+ - When the statement of "p1.equals(p2)" is called, at this time, p1 is an instance of PersonWithJob and p2 is an instance of Person, so the equals method in PersonWithJob class is called, and then it fails at the line 18. Therefore, this statement returns false.
+ - For the statement of "p2.equals(p1)", when we call this statement, that means the equals method in Person class is called, and all conditions in the method are passed, then the statemen returns true.
+ 
+ The solution is replacing inheritance with composition. So we change the code in PersonWithJob:
+ - Add Person as an attribute of PersonWithJob class.
+ - Modify the equals method (please see in the code).
+ - Add a new method as getPerson(). This method returns a Person object.
+ 

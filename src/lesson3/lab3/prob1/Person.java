@@ -13,10 +13,17 @@ public class Person {
 	@Override
 	public boolean equals(Object aPerson) {
 		if(aPerson == null) return false; 
-		if(!(aPerson instanceof Person)) return false;
-		Person p = (Person)aPerson;
-		boolean isEqual = this.name.equals(p.name);
-		return isEqual;
+		if(aPerson instanceof Person)
+		{
+			Person p = (Person)aPerson;
+			return this.name.equals(p.name);
+		}
+		if (aPerson instanceof PersonWithJob) 
+		{
+			PersonWithJob p = (PersonWithJob) aPerson;
+			return this.name.equals(p.getPerson().getName());
+		}		
+		return false;
 	}
 	public static void main(String[] args) {
 		
