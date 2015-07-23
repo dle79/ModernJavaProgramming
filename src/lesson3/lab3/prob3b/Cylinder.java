@@ -1,4 +1,4 @@
-package lab3.prob3b;
+package lesson3.lab3.prob3b;
 
 public class Cylinder {
 	private double height = 1.0;
