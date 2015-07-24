@@ -396,7 +396,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "c: Commissioned",
+													"text": "e: Employee",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5
 												},
@@ -1657,10 +1657,10 @@
 									"containerExtending": false,
 									"left": 8,
 									"top": 128,
-									"width": 100,
-									"height": 51,
+									"width": 103,
+									"height": 64,
 									"autoResize": false,
-									"text": "Hourly and Salaried also fit here",
+									"text": "Commisioned, ,Hourly and Salaried also fit here",
 									"wordWrap": true
 								},
 								{
@@ -1970,7 +1970,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFOvh4MGiewU3c="
 							},
-							"name": "c",
+							"name": "e",
 							"visibility": "public",
 							"represent": {
 								"$ref": "AAAAAAFOvi9YzinqZA4="
@@ -2090,7 +2090,7 @@
 					"visibility": "public",
 					"isStatic": false,
 					"isLeaf": false,
-					"type": "Commissioned",
+					"type": "Employee",
 					"isReadOnly": false,
 					"isOrdered": false,
 					"isUnique": false,
