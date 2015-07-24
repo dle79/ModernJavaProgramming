@@ -43,12 +43,12 @@ public class UnitTest {
 	public void testCommissionedEmployee() {
 		
 		Commissioned comEmp = new Commissioned(3, 10.0, 20.0);
-		Date date = new GregorianCalendar(2015, Calendar.JUNE, 11).getTime();
+		Date date = new GregorianCalendar(2015, Calendar.DECEMBER, 11).getTime();
 		comEmp.addOrder(new Order(3, date, 5.0) );
 		
 		Employee emp = new Commissioned(comEmp);
 		
-		Paycheck payCheck = emp.calcCompensation(7, 2015);
+		Paycheck payCheck = emp.calcCompensation(1, 2016);
 		double grossSalary = emp.calcGrossPay();
 		double expectedNetSalary = grossSalary - grossSalary * payCheck.getTotalTax();
 		double netSalary = payCheck.getNextPay();

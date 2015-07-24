@@ -5,30 +5,32 @@ public abstract class Employee {
 	private int empId;
 	
 	//added to keep track date of paying check
-	private int monthPayCheck;
-	private int yearPayCheck;
+	private int payCheckMonth;
+	private int payCheckYear;
 	
 	// Constructor
 	public Employee(int emplId) {
 		this.empId = emplId;
 	}
 
-	public void setMonthPayCheck(int month)
+	// used only inside
+	private void setMonthPayCheck(int month)
 	{
-		this.monthPayCheck = month;
+		this.payCheckMonth = month;
 	}
 	public int getMonthPayCheck()
 	{
-		return this.monthPayCheck;
+		return this.payCheckMonth;
 	}
 	
-	public void setYearPayCheck(int year)
+	// used only inside
+	private void setYearPayCheck(int year)
 	{
-		this.yearPayCheck = year;
+		this.payCheckYear = year;
 	}
 	public int getYearPayCheck()
 	{
-		return this.yearPayCheck;
+		return this.payCheckYear;
 	}
 	
 	public int getEmpId()
