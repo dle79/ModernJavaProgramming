@@ -2,7 +2,7 @@ package lesson5.lab5.prob4.personbirthinfo;
 
 //Outsisde of personbirthinfo package, Person is immutable
 //Immutability in this case depends on the factory that BirthInfo is immutable
-public class Person {
+final public class Person {
 	
 	private String name;
 	private BirthInfo birthInfo;

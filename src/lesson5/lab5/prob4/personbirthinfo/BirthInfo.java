@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 //Outsisde of personbirthinfo package, BirthInfo is immutable
 //Immutability in this case depends on the factory that Person is immutable
-public class BirthInfo {
+final public class BirthInfo {
 	
 	private LocalDate dateOfBirth;
 	private Person person;
