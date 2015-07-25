@@ -12,11 +12,11 @@ import lesson5.lab5.prob4.personbirthinfo.Person;
 import lesson5.lab5.prob4.personbirthinfo.PersonBirthInfo;
 import lesson5.lab5.prob4.personbirthinfo.PersonBirthInfoFactory;
 
-import org.junit.Test;
+
 
 public class UnitTest {
 
-	@Test
+	@org.junit.Test
 	public void test() {
 		Collection<DataRecord> data = Database.hashData.values();
 		ArrayList<Person> personList = new ArrayList<>();
