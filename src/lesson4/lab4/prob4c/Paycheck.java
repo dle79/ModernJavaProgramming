@@ -52,7 +52,7 @@ public class Paycheck {
 	}
 	
 	public double getNextPay() {
-		double netPay = grossPay - grossPay * (FICA_TAX + STATE_TAX + LOCAL_Tax + MEDICARE_TAX + SOCIAL_SECURITY_TAX);
+		double netPay = grossPay - grossPay * getTotalTax();
 		return netPay;
 	}
 }
