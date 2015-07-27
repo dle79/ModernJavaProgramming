@@ -118,7 +118,6 @@ public class DomServiceClass implements DomInterface {
     ////////////// private methods //////////////////
 
     private void lookupUsingNodeList(NodeList list, String value) {
-
         if (list == null || list.getLength() == 0)
                 return;
         int len = list.getLength();
@@ -233,46 +232,5 @@ public class DomServiceClass implements DomInterface {
         public int getLength() {
             return len;
         }							
-    }
-    
-
-    /**
-     * Notice only the interface is necessary
-     */
-    public static void main(String[] args) {
-        //for the test, we create a file that stores id, phonenum and email address
-        String n = System.getProperty("line.separator");
-        try {           
-            DomInterface xml = new DomServiceClass("src/lesson6/lecture/javafx/domprocessing/test.xml");
-            
-            List<String> names = new ArrayList<>();
-            names.addAll(xml.extractLeafTagNames());
-            
-            System.out.println(n + "Here is a list of the tag names:" + n);
-            System.out.println(names + n + n);  
-            System.out.println("Looking up phone number of " + "tom_jones@yahoo.com");
-            
-            //find toms phone number
-            String tomsEmail = xml.lookupValueByName("email", "tom_jones@yahoo.com", "phonenum");
-            
-            //find out all about tom
-            List<Properties> propsList = xml.lookupEntry("email", "tom_jones@yahoo.com");
-            
-            if(tomsEmail != null) {
-            	System.out.println("Toms phone number is " + tomsEmail + n);
-            } else {
-            	System.out.println("Toms phone number not found" + n);
-            }
-            if(propsList != null) {
-            	System.out.println("All about Tom: " + propsList.get(0));
-            } else {
-            	System.out.println("Tom's entry was not found");
-            }
-            
-        }
-        catch(DomException e) {
-            System.out.println(e.getMessage());
-        } 
-        
     }
 }

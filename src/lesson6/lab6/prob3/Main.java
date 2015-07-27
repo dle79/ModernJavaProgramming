@@ -16,8 +16,8 @@ public class Main {
 	public List<Customer> allCustomersBeginWithMa() {
 		List<Customer> customerList = new ArrayList<Customer>();
 		try {
-			System.out.println(System.getProperty("user.dir") + "/src/lesson6/labs/prob3/customer.xml");
-			DomInterface xml = new DomServiceClass(System.getProperty("user.dir") + "/src/lesson6/labs/prob3/customer.xml");			
+			String pathOfXml = System.getProperty("user.dir") + "/src/lesson6/lab6/prob3/customer.xml";
+			DomInterface xml = new DomServiceClass(pathOfXml);			
 
 			List<Properties> propertyList = new ArrayList<Properties>();
 			propertyList = xml.lookupEntry(CITY, "Ma");
