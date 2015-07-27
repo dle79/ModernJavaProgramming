@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab6.prob2;
+package lesson6.lab6.prob2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
