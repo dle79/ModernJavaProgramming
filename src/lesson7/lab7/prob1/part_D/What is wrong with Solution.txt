@@ -1,0 +1,8 @@
+In this solution, an employee that is added to list noDupsList inside method 
+removeDuplicates is searched using tracker.get(e) method and the value of instance
+variable visited is changed to true. As the value is changed from false to true,
+the return value of hashCode() changes. When an third employee with same name and
+salary is compared, then that employee has different hashCode that the employee that
+is already stored in variable noDupsList. Because of this, tracker.containsKey returns false,
+allowing duplicate employees to be in the variable noDupsList. And the method removeDuplicates 
+doesn't remove duplicates completely.

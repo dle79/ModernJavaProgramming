@@ -1,0 +1,10 @@
+In this solution, the method inList() uses Employee's equals(Employee e) method for comparison. 
+Although the solution generates correct result at this point, the equals method is supposed to
+be overridden version of Object class:
+ @Override
+public boolean equals(Object e)
+	
+This solution doesn't work in the method listsAreEqual, where List<Employee>().contains(Object) method 
+is used to identify whether an employee is in a list. This is because, the contains method uses the
+Object's equals (Object) method, not the Employee's equals(Employee) method. Again, overriding
+equals(Object) method solves this problem.

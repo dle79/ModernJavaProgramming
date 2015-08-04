@@ -1,0 +1,5 @@
+In this solution, Object's equals(Object) method is overridden. Therefore, the listAreEqual method works as expected.
+
+However, HashMap<Employee, Employee>().containsKey(Employee) is used in method removeDuplicates(),
+ and this method of HashMap uses Object's hashCode() method to compare the objects. 
+ Since, Employee doesn't override hashCode() method, the method removeDuplicates() doesn't produce desired result.
