@@ -1,0 +1,10 @@
+The return value from compareTo is 0 if the name of both employee is equal.
+This is not always true. 
+Set<Employee> employeeSet = new HashSet<>();
+		employeeSet.add(new Employee("Tim", 50000));
+		employeeSet.add(new Employee("Tim", 50000));
+System.out.println(employeeSet); // Prints [<name: Tim salary: 50000>,<name: Tim salary: 50000>]
+
+As per contract there cannot be two Employee with name "Tim" in the Set. 
+But above example shows that two employee objects are not same
+even if they have same name.
