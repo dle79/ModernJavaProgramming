@@ -12,7 +12,7 @@ public class EmployeeInfoBetter {
 	Function<Employee, String> byName = e -> e.getName();
 	Function<Employee, Integer> bySalary = e -> e.getSalary();
 	
-	Comparator<Employee> byNameComparator = Comparator.comparing(byName).thenComparing(bySalary).reversed();
+	Comparator<Employee> byNameComparator = Comparator.comparing(byName).thenComparing(bySalary);
 	Comparator<Employee> bySalaryComparator = Comparator.comparing(bySalary).thenComparing(byName);
 	
 	@SuppressWarnings("serial")
