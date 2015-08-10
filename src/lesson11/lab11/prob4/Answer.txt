@@ -1,0 +1,16 @@
+-Part 1:
+		List<Integer> ints = new ArrayList<Integer>();
+		ints.add(1);
+		ints.add(2);
+		
+		List<? extends Number> num = ints;
+		double dbl = sum(num);
+		num.add(3.14); // compile error: The value 3.14 cannot be added because it might not be the right subtype of Number.
+		
+Part 2:	
+		List<Object> objs = new ArrayList<Object>();
+		objs.add(1);
+		objs.add("two");
+		List<? super Integer> ints = objs;
+		ints.add(3);
+		double dbl = sum(ints);// compile error: 
