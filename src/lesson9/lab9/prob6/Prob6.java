@@ -31,4 +31,11 @@ public class Prob6 {
 		}).get();
 	}
 
+	public static final Set<String> EMPTY_SET = new HashSet<String>();
+	public Set<String> union2(List<Set<String>> sets) {
+		return sets.stream().reduce(EMPTY_SET, (s, t) -> {
+			s.addAll(t);
+			return s;
+		});
+	}
 }
