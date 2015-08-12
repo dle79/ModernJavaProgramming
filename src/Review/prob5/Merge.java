@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Merge <T, E> {
 
-	private List<Integer> cashInt = new ArrayList<Integer>();
+	private List<Integer> cacheInt = new ArrayList<Integer>();
 
 	/* For testing your implementation */
 	@SuppressWarnings("unchecked")
@@ -53,21 +53,21 @@ public class Merge <T, E> {
 			if(t1 != null && t2 != null)
 			{
 				int comp = compare(t1, t2 );
-				if(comp > 0 && cashInt.size() == 0)
+				if(comp > 0 && cacheInt.size() == 0)
 				{
 					result.add((T) t2);
 					result.add((T) t1);
 				}
-				else if(comp < 0 && cashInt.size() == 0)
+				else if(comp < 0 && cacheInt.size() == 0)
 				{
 					result.add((T) t1);
 					result.add((T) t2);
 				}
-				else if(comp > 0 && cashInt.size() > 0)
+				else if(comp > 0 && cacheInt.size() > 0)
 				{
-					if(compareWithoutCash(t2, cashInt.get(0) ) > 0)
+					if(compareWithoutCash(t2, cacheInt.get(0) ) > 0)
 					{
-						result.add((T) cashInt.remove(0));
+						result.add((T) cacheInt.remove(0));
 						result.add((T) t2);
 					}
 					else
@@ -75,11 +75,11 @@ public class Merge <T, E> {
 						result.add((T) t2);
 					}
 				}
-				else if(comp < 0 && cashInt.size() > 0)
+				else if(comp < 0 && cacheInt.size() > 0)
 				{
-					if(compareWithoutCash(t1, cashInt.get(0) ) > 0)
+					if(compareWithoutCash(t1, cacheInt.get(0) ) > 0)
 					{
-						result.add((T) cashInt.remove(0));
+						result.add((T) cacheInt.remove(0));
 						result.add((T) t1);
 					}
 					else
@@ -99,10 +99,12 @@ public class Merge <T, E> {
 			}
 		}
 
-		if(cashInt.size() > 0)
+		if(cacheInt.size() > 0)
 		{
-			result.addAll((Collection<? extends T>) cashInt);
+			result.addAll((Collection<? extends T>) cacheInt);
+			cacheInt.clear();
 		}
+		
 		return result;
 	}
 		
@@ -126,7 +128,7 @@ public class Merge <T, E> {
 			Integer o2Int = (Integer) o2;
 			if(o1Str.length() <= o2Int)
 			{
-				cashInt.add(o2Int);
+				cacheInt.add(o2Int);
 				return -1;
 			}
 			return o1Str.length() - o2Int;
@@ -137,7 +139,7 @@ public class Merge <T, E> {
 			String o2Str = (String) o2;
 			if(o1Int >= o2Str.length())
 			{
-				cashInt.add(o1Int);
+				cacheInt.add(o1Int);
 				return 1;
 			}
 			return o1Int - o2Str.length();

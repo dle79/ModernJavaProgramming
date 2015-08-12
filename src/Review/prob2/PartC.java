@@ -11,21 +11,17 @@ public class PartC {
 	
 	//provide a method reference and the type of method reference
 	//TYPE: 
-	Comparator<Long> max2 = Long::compare;
+	Comparator<Long> max2 = Long::compareTo;
 	
 	// provide an inner class that behaves the same way as the labmda
 	//class My--- implements --- { }
 	class MyMax implements Comparator<Long> {
 
+		
 		@Override
 		public int compare(Long o1, Long o2) {
 			// TODO Auto-generated method stub
-			if(o1 > o2)
-				return 1;
-			else if(o1 < o2)
-				return -1;
-			else
-				return 0;
+			return o1.compareTo(o2);
 		}
 		
 	}
