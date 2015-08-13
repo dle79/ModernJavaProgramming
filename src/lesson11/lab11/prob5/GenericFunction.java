@@ -22,4 +22,5 @@ public class  GenericFunction {
 		}
 		return secondSmallest;
 	}
+	
 }
