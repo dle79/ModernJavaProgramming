@@ -32,13 +32,13 @@ public class ConditionalRemove {
 	public static void main(String[] args) {
 		ArrayList<String> list = new ArrayList<String>() {
 			{
-				add("Hello");add("Goodbye");
+				add("Hello");add("Goodbye");add("Madam");add("Father");
 			}
 		};
 		
 		ArrayList<String> listK = new ArrayList<String>() {
 			{
-				add("Hello");add("Gokodbye");
+				add("Hello");add("Gokodbye");add("Helklo");add("Goodbye");
 			}
 		};
 		
@@ -53,19 +53,25 @@ public class ConditionalRemove {
 		};
 			
 		System.out.println(conditionalRemove(list, new StrLengthCondition()));
-		//System.out.println(conditionalRemove(listK, new StrContainKCondition()));
+		System.out.println(conditionalRemove(listK, new StrContainKCondition()));
 		System.out.println(conditionalRemove(listEmployee, new EmployeeSalaryCondition()));
-		//System.out.println(conditionalRemove(listInt, new IntegerCondition()));
+		System.out.println(conditionalRemove(listInt, new IntegerCondition()));
 	}
 
 	
 	public static <T> List<T> conditionalRemove(ArrayList<T> list, Predicate<T> byCond) {
 	
+		ArrayList<T> result = new ArrayList<T>();
 		for (T s : list) {
 			if (byCond.test(s)) {
-				list.remove(s);
+				//list.remove(s);
+			}
+			else
+			{
+				result.add(s);
 			}
 		}
+		list =  result;
 		return list;
 	}
 }
